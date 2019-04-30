@@ -1,0 +1,15 @@
+body
+{
+    background: url('../img/mountain.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container
+{
+    width: 50%;
+    background: #3b4652;
+    padding: 2%;
+    border-radius: 20px;
+    opacity: .95;
+}
+

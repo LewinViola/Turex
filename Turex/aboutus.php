@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <link rel="stylesheet" href="./style/home.css"> 
+    <link rel="stylesheet" href="./external/css/bootstrap.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+    <title>Home</title>
+    <style>
+    .aboutus
+    {
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 5%;
+    }
+
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm bg-dark justify-content-between">
+    <form class="form-inline my-2 my-lg-0" method="post">
+        <input class="form-control mr-sm-2" type="text" placeholder="Ingrese su busqueda" aria-label="Search" name="busqueda">
+        <button class="btn btn-light" type="submit" name="search">Buscar</button>
+    </form>
+    <?php
+      if(isset($_POST['search']))
+      {
+        $busqueda = $_POST['busqueda'];
+        $_SESSION['busqueda'] = $busqueda;
+        header("Location: ./resenas.php");
+      }
+    ?>
+    <ul class="navbar-nav">
+        <li class="nav-item"><a href="./home.php" class="nav-link btn-dark">Inicio</a></li>
+        <li class="nav-item"><a href="./publicar.php" class="nav-link btn-dark">Publicar</a></li>
+        <li class="nav-item"><a href="./tasks/cerrarsession.php" class="nav-link btn-dark">Cerrar Sesión</a></li>
+        <li class="nav-item"><a href="aboutus.php" class="nav-link btn-dark">Sobre nosotros</a></li>
+    </ul>
+</nav>
+
+<div class="aboutus">
+    <h2>Propósito del proyecto Turex</h2>
+    <p>Este proyecto está para llegar a cada uno de las personas que viven y disfrutan el turismo, ya sea interno o exterior. De esta forma las personas que quieren compartir sus experiencias podrán hacerlo en un lugar dónde hay más personas con un interés genuino por el tema, y las que quieren ir a lugar, podrán tener esas referencias.</p>
+</div>
+           
+<script src="./external/js/jquery-3.3.1.slim.min.js"></script>
+<script src="./external/js/popper.min.js"></script>
+<script src="./external/js/bootstrap.min.js"></script>
+
+</body>
+</html>
